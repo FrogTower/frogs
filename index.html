@@ -1,228 +1,230 @@
 <html lang="en">
+
 <head>
-  <title>Welcome to FrogTower.online!</title>
+  <title>Frogs (Beta)</title>
   <style type="text/css">
-      @import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
 
-      body {
-          background: #360808;
-          color: white;
-          font-family: 'Arimo', sans-serif;
+    body {
+      background: #360808;
+      color: white;
+      font-family: 'Arimo', sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+    }
+
+    .warpper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tab {
+      cursor: pointer;
+      padding: 10px 20px;
+      margin: 0px 2px;
+      background: #000;
+      display: inline-block;
+      color: #fff;
+      border-radius: 3px 3px 0px 0px;
+    }
+
+    .panels {
+      color: black;
+      background: #fffffff6;
+      min-height: 200px;
+      width: 90%;
+
+      border-radius: 3px;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .panel {
+      display: none;
+      animation: fadein .8s;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
       }
 
-      h2 {
-          text-align: center;
-          font-size: 2em;
+      to {
+        opacity: 1;
       }
+    }
 
-      .warpper {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-      }
+    .panel-title {
+      font-size: 1.5em;
+      font-weight: bold
+    }
 
-      .tab {
-          cursor: pointer;
-          padding: 10px 20px;
-          margin: 0px 2px;
-          background: #000;
-          display: inline-block;
-          color: #fff;
-          border-radius: 3px 3px 0px 0px;
-      }
+    .radio {
+      display: none;
+    }
 
-      .panels {
-          color: black;
-          background: #fffffff6;
-          min-height: 200px;
-          width: 90%;
+    #one:checked~.panels #one-panel,
+    #two:checked~.panels #two-panel,
+    #three:checked~.panels #three-panel,
+    #four:checked~.panels #four-panel,
+    #five:checked~.panels #five-panel,
+    #six:checked~.panels #six-panel,
+    #seven:checked~.panels #seven-panel,
+    #eight:checked~.panels #eight-panel,
+    #nine:checked~.panels #nine-panel {
+      display: block
+    }
 
-          border-radius: 3px;
-          overflow: hidden;
-          padding: 20px;
-      }
+    #one:checked~.tabs #one-tab,
+    #two:checked~.tabs #two-tab,
+    #three:checked~.tabs #three-tab,
+    #four:checked~.tabs #four-tab,
+    #five:checked~.tabs #five-tab,
+    #six:checked~.tabs #six-tab,
+    #seven:checked~.tabs #seven-tab,
+    #eight:checked~.tabs #eight-tab,
+    #nine:checked~.tabs #nine-tab {
+      background: #fffffff6;
+      color: #000;
+      border-top: 3px solid #000;
+    }
 
-      .panel {
-          display: none;
-          animation: fadein .8s;
-      }
+    .cover {
+      width: 200px;
+    }
 
-      @keyframes fadein {
-          from {
-              opacity: 0;
-          }
-          to {
-              opacity: 1;
-          }
-      }
+    #channels div {
+      display: inline-block;
+      text-align: center;
+    }
 
-      .panel-title {
-          font-size: 1.5em;
-          font-weight: bold
-      }
-
-      .radio {
-          display: none;
-      }
-
-      #one:checked ~ .panels #one-panel,
-      #two:checked ~ .panels #two-panel,
-      #three:checked ~ .panels #three-panel,
-      #four:checked ~ .panels #four-panel,
-      #five:checked ~ .panels #five-panel,
-      #six:checked ~ .panels #six-panel,
-      #seven:checked ~ .panels #seven-panel,
-      #eight:checked ~ .panels #eight-panel,
-      #nine:checked ~ .panels #nine-panel {
-          display: block
-      }
-
-      #one:checked ~ .tabs #one-tab,
-      #two:checked ~ .tabs #two-tab,
-      #three:checked ~ .tabs #three-tab,
-      #four:checked ~ .tabs #four-tab,
-      #five:checked ~ .tabs #five-tab,
-      #six:checked ~ .tabs #six-tab,
-      #seven:checked ~ .tabs #seven-tab,
-      #eight:checked ~ .tabs #eight-tab,
-      #nine:checked ~ .tabs #nine-tab{
-          background: #fffffff6;
-          color: #000;
-          border-top: 3px solid #000;
-      }
-
-      .cover {
-          width: 200px;
-      }
-
-      #channels div {
-          display: inline-block;
-          text-align: center;
-      }
-
-      #channels img {
-          border-radius: 25%;
-      }
+    #channels img {
+      border-radius: 25%;
+    }
   </style>
 </head>
+
 <body>
 
-<h1>Welcome to FrogTower.online</h1>
-<h3>Tutorial</h3>
-<p>Press <b>R</b> to choose between tabs.</p>
-<p>Press the arrow keys to pick the tab.</p>
-<p>Press <b>Return</b> or <b>Enter</b> to enter the tab.</p>
+  <h1>Welcome to Frogs! (Beta)</h1>
 
-<div class="warpper">
-  <input class="radio" id="one" name="group" type="radio">
-  <input class="radio" id="two" name="group" type="radio">
-  <input class="radio" id="three" name="group" type="radio">
-  <input class="radio" id="four" name="group" type="radio">
-  <input class="radio" id="five" name="group" type="radio">
-  <input class="radio" id="six" name="group" type="radio">
-  <input class="radio" id="seven" name="group" type="radio">
-  <input class="radio" id="eight" name="group" type="radio">
-  <input class="radio" id="nine" name="group" type="radio" checked>
-  <div class="tabs">
-    <label class="tab" id="one-tab" for="one">Shows</label>
-    <label class="tab" id="two-tab" for="two">Movies</label>
-    <label class="tab" id="three-tab" for="three">Channels</label>
-    <label class="tab" id="four-tab" for="four">Trailers</label>
-    <label class="tab" id="five-tab" for="five">Books</label>
-    <label class="tab" id="six-tab" for="six">Series</label>
-    <label class="tab" id="seven-tab" for="seven">Games</label>
-    <label class="tab" id="eight-tab" for="eight">Settings</label>
-    <label class="tab" id="nine-tab" for="nine">What Is This?</label>
-  </div>
-  <div class="panels">
-    <div class="panel" id="one-panel">
-      <div class="panel-title">Shows</div>
-      <p>Shows will go here.</p>
+  <div class="warpper">
+    <input class="radio" id="one" name="group" type="radio">
+    <input class="radio" id="two" name="group" type="radio">
+    <input class="radio" id="three" name="group" type="radio">
+    <input class="radio" id="four" name="group" type="radio">
+    <input class="radio" id="five" name="group" type="radio">
+    <input class="radio" id="six" name="group" type="radio">
+    <input class="radio" id="seven" name="group" type="radio">
+    <input class="radio" id="eight" name="group" type="radio">
+    <input class="radio" id="nine" name="group" type="radio" checked>
+    <div class="tabs">
+      <label class="tab" id="one-tab" for="one">Shows</label>
+      <label class="tab" id="two-tab" for="two">Movies</label>
+      <label class="tab" id="three-tab" for="three">Channels</label>
+      <label class="tab" id="four-tab" for="four">Trailers</label>
+      <label class="tab" id="five-tab" for="five">Books</label>
+      <label class="tab" id="six-tab" for="six">Series</label>
+      <label class="tab" id="seven-tab" for="seven">Games</label>
+      <label class="tab" id="eight-tab" for="eight">Settings</label>
+      <label class="tab" id="nine-tab" for="nine">What Is This?</label>
     </div>
-    <div class="panel" id="two-panel">
-      <div class="panel-title">Movies</div>
-      <p>This is a place for movies</p>
-    </div>
-    <div class="panel" id="three-panel">
-      <div class="panel-title">Channels</div>
-      <hr>
-      <span id="channels">
-        <div>
-          <a href="https://www.youtube.com/@frogtower8876">
-            FrogTower<br>
-            <img src="images/ft.jpg">
-          </a>
-        </div>
-        <div>
+    <div class="panels">
+      <div class="panel" id="one-panel">
+        <div class="panel-title">Shows</div>
+        <p>Shows will go here.</p>
+      </div>
+      <div class="panel" id="two-panel">
+        <div class="panel-title">Movies</div>
+        <p>This is a place for movies</p>
+      </div>
+      <div class="panel" id="three-panel">
+        <div class="panel-title">Channels</div>
+        <hr>
+        <span id="channels">
+          <div>
+            <a href="https://www.youtube.com/@frogtower8876">
+              FrogTower<br>
+              <img src="images/ft.jpg">
+            </a>
+          </div>
+          <div>
             <a href="https://www.youtube.com/@frogtowermath5272">
               FrogTower iQ<br>
               <img src="images/ftiq.jpg">
             </a>
-        </div>
-        <div>
-          <a href="https://www.youtube.com/@frogtowerpirates9964">
-            FrogTower Pirates<br>
-            <img src="images/ftpirates.jpg">
-          </a>
-        </div>
-        <div>
-          <a href="https://www.youtube.com/@frogtowergaming7407">
-            FrogTower Gaming<br>
-            <img src="images/ftgaming.jpg">
-          </a>
-        </div>
-        <div>
-          <a href="https://www.youtube.com/@frogtoweranimal3154">
-            FrogTower Animal<br>
-            <img src="images/ftanimal.jpg">
-          </a>
-        </div>
-      </span>
-    </div>
-    <div class="panel" id="four-panel">
-      <div class="panel-title">Trailers</div>
-      <p>Here be trailers.</p>
-    </div>
-    <div class="panel" id="five-panel">
-      <div class="panel-title">Books</div>
-      <ul>
-        <li><a
-            href="https://docs.google.com/document/d/e/2PACX-1vRJEIkop--6GqfcN4fo1EydGgX3GXNaq9IvBt0qlNSjmns0ZKbLraUda8lPJLCh_5-gYYqyM-Y8E4M7/pub">Viking
-          Attack The Celtics</a></li>
-      </ul>
-      <img class="cover" src="vikings_attack_the_celtics.png" alt="Cover Image">
-    </div>
-    <div class="panel" id="six-panel">
-      <div class="panel-title">Serieses</div>
-      <ul>
-        <li>Groups of War</li>
-      </ul>
-    </div>
-    <div class="panel" id="seven-panel">
-      <div class="panel-title">Games</div>
-      <ul>
-        <li>Soup Jr.</li>
-        <li>Potato Zombies</li>
-      </ul>
-    </div>
-    <div class="panel" id="eight-panel">
-      <div class="panel-title">Settings</div>
-      <ul>
-        <li>Play music:
-          <audio controls loop src="site_music.m4a"></audio>
-        </li>
-      </ul>
-    </div>
-    <div class="panel" id="nine-panel">
-      <div class="panel-title">What Is This?</div>
-      <p>What is FrogTower.online?</p>
-      <p>
-        FrogTower.online is a place to watch shows, movies, trailers,
-        and to read books.
-      </p>
+          </div>
+          <div>
+            <a href="https://www.youtube.com/@frogtowerpirates9964">
+              FrogTower Pirates<br>
+              <img src="images/ftpirates.jpg">
+            </a>
+          </div>
+          <div>
+            <a href="https://www.youtube.com/@frogtowergaming7407">
+              FrogTower Gaming<br>
+              <img src="images/ftgaming.jpg">
+            </a>
+          </div>
+          <div>
+            <a href="https://www.youtube.com/@frogtoweranimal3154">
+              FrogTower Animal<br>
+              <img src="images/ftanimal.jpg">
+            </a>
+          </div>
+        </span>
+      </div>
+      <div class="panel" id="four-panel">
+        <div class="panel-title">Trailers</div>
+        <p>Here be trailers.</p>
+      </div>
+      <div class="panel" id="five-panel">
+        <div class="panel-title">Books</div>
+        <ul>
+          <li><a
+              href="https://docs.google.com/document/d/e/2PACX-1vRJEIkop--6GqfcN4fo1EydGgX3GXNaq9IvBt0qlNSjmns0ZKbLraUda8lPJLCh_5-gYYqyM-Y8E4M7/pub">Viking
+              Attack The Celtics</a></li>
+        </ul>
+        <img class="cover" src="vikings_attack_the_celtics.png" alt="Cover Image">
+      </div>
+      <div class="panel" id="six-panel">
+        <div class="panel-title">Serieses</div>
+        <ul>
+          <li>Groups of War</li>
+        </ul>
+      </div>
+      <div class="panel" id="seven-panel">
+        <div class="panel-title">Games</div>
+        <ul>
+          <li>Soup Jr.</li>
+          <li>Potato Zombies</li>
+        </ul>
+      </div>
+      <div class="panel" id="eight-panel">
+        <div class="panel-title">Settings</div>
+        <ul>
+          <li>Play music:
+            <audio controls loop src="site_music.m4a"></audio>
+          </li>
+          <li>Break a Leg:
+            <audio controls loop src="break_a_leg.m4a"></audio>
+          </li>
+        </ul>
+      </div>
+      <div class="panel" id="nine-panel">
+        <div class="panel-title">What Is This?</div>
+        <p>What is FrogTower.online?</p>
+        <p>
+          FrogTower.online is a place to watch shows, movies, trailers,
+          and to read books.
+        </p>
+      </div>
     </div>
   </div>
-</div>
 
 
 </body>
